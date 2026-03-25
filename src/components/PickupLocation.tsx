@@ -4,7 +4,7 @@ import { MapPin, Clock, Phone } from 'lucide-react'
 const OWNER = {
   whatsapp: '97699976835',
   telegram: 'kineticprecision',
-  viber: '97699976835',
+  viber: '%2B97699976835',
   wechat: 'kinetic_wechat',
 }
 
