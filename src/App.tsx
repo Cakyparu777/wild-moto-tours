@@ -4,7 +4,6 @@ import Hero from './components/Hero'
 import Gallery from './components/Gallery'
 import Process from './components/Process'
 import PickupLocation from './components/PickupLocation'
-import Footer from './components/Footer'
 
 export default function App() {
   const [dark, setDark] = useState(() => {
