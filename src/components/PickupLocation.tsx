@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { MapPin, Clock, Phone } from 'lucide-react'
 
 const OWNER = {
-  whatsapp: '97699001234',
+  whatsapp: '97699976835',
   telegram: 'kineticprecision',
-  viber: '97699001234',
+  viber: '97699976835',
   wechat: 'kinetic_wechat',
 }
 
@@ -124,8 +124,8 @@ export default function ContactInfo() {
               </div>
               <div>
                 <p className="text-white font-semibold mb-1">Phone</p>
-                <a href="tel:+97699001234" className="text-gray-400 text-sm hover:text-white transition-colors">
-                  +976 9900-1234
+                <a href="tel:+97699976835" className="text-gray-400 text-sm hover:text-white transition-colors">
+                  +976 9997-6835
                 </a>
               </div>
             </div>
