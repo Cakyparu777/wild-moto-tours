@@ -57,7 +57,7 @@ const contacts = [
   },
   {
     label: 'Viber',
-    href: `viber://chat?number=${OWNER.viber}&text=${msg()}`,
+    href: `viber://chat?number=${OWNER.viber}`,
     color: '#7360f2',
     hoverColor: '#5f4ecc',
     icon: (
