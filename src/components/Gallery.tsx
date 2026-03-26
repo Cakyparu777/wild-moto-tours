@@ -164,7 +164,7 @@ export default function Gallery() {
                 {car.tag === 'Motorcycle' && (
                   <div className="absolute top-2 right-2 bg-white px-3 py-1.5 flex flex-col items-center gap-1">
                     <img src={loneRiderLogo} alt="Lone Rider" className="h-6 w-auto object-contain" />
-                    <p className="text-[9px] font-semibold tracking-widest uppercase text-gray-500">Equipment Included</p>
+                    <p className="text-[7px] font-semibold tracking-widest uppercase text-black">Equipment Included</p>
                   </div>
                 )}
               </div>
