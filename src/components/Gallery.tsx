@@ -161,9 +161,9 @@ export default function Gallery() {
             <div key={car.name} className="group border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-900 transition-all duration-300">
               <CarSlider images={car.images} name={car.name} />
               {car.tag === 'Motorcycle' && (
-                <div className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 px-4 py-2 flex items-center justify-end gap-2">
+                <div className="bg-white border-b border-gray-100 px-4 py-2 flex items-center justify-end gap-2">
                   <img src={loneRiderLogo} alt="Lone Rider" className="h-5 w-auto object-contain" />
-                  <p className="text-[9px] font-semibold tracking-widest uppercase text-gray-600 dark:text-gray-400">Equipment Included</p>
+                  <p className="text-[9px] font-semibold tracking-widest uppercase text-gray-600">Equipment Included</p>
                 </div>
               )}
 
