@@ -38,7 +38,7 @@ function buildMsg(lang: string, car = '') {
   return encodeURIComponent(`Сайн уу! ${car ? car + ' машин түрээслэхийг хүсч байна.' : 'Мэдээлэл авмаар байна.'} / Hi! ${car ? `I'd like to rent the ${car}.` : "I'd like more information."}`)
 }
 
-const INSTAGRAM = 'wildmototours'  // TODO: replace with real handle
+const INSTAGRAM = 'wild_moto_mongolia'
 
 const contacts = [
   {
