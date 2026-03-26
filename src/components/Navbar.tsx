@@ -35,9 +35,6 @@ export default function Navbar({ dark, onToggle }: NavbarProps) {
         >
           {dark ? <Sun size={15} /> : <Moon size={15} />}
         </button>
-        <button className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs font-semibold tracking-widest uppercase px-5 py-2.5 hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors">
-          Book Now
-        </button>
       </div>
 
       <div className="md:hidden flex items-center gap-3">
@@ -64,11 +61,6 @@ export default function Navbar({ dark, onToggle }: NavbarProps) {
                 </a>
               </li>
             ))}
-            <li>
-              <button className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs font-semibold tracking-widest uppercase px-5 py-2.5 w-full">
-                Book Now
-              </button>
-            </li>
           </ul>
         </div>
       )}
