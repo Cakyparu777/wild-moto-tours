@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Gallery from './components/Gallery'
 import Process from './components/Process'
 import PickupLocation from './components/PickupLocation'
+import { LangProvider } from './i18n'
 
 export default function App() {
   const [dark, setDark] = useState(() => {
@@ -26,13 +27,15 @@ export default function App() {
   }, [dark])
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
-      <Navbar dark={dark} onToggle={() => setDark(!dark)} />
-      <Hero />
-      <Process />
-      <Gallery />
-      <PickupLocation />
-      {/* <Footer /> */}
-    </div>
+    <LangProvider>
+      <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+        <Navbar dark={dark} onToggle={() => setDark(!dark)} />
+        <Hero />
+        <Process />
+        <Gallery />
+        <PickupLocation />
+        {/* <Footer /> */}
+      </div>
+    </LangProvider>
   )
 }
