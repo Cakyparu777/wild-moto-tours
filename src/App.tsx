@@ -34,8 +34,8 @@ export default function App() {
         <Navbar dark={dark} onToggle={() => setDark(!dark)} />
         <Hero />
         <Checklist />
-        <Process />
         <Gallery />
+        <Process />
         <Destinations />
         <PickupLocation />
         {/* <Footer /> */}

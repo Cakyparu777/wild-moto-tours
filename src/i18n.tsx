@@ -10,10 +10,10 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      tagline: 'Mongolia · 4WD & Motorcycle Rental',
+      tagline: 'Mongolia · 4x4 & Motorcycle Rental',
       headline1: 'EXPLORE THE',
       headline2: 'WILD STEPPE.',
-      description: "Mongolia's premier vehicle and motorcycle rental — rugged, well-maintained 4WDs and bikes ready for the open steppe. Wild Moto Tours puts you in the right ride for any adventure.",
+      description: "Mongolia's premier vehicle and motorcycle rental — rugged, well-maintained 4x4s and bikes ready for the open steppe. Wild Moto Tours puts you in the right ride for any adventure.",
       exploreFleet: 'Explore the Fleet',
       contactUs: 'Contact Us',
       trustLabel: 'Trust Score',
@@ -56,7 +56,7 @@ export const translations = {
         {
           name: 'Terelj National Park',
           distance: '80km from Ulaanbaatar',
-          description: 'Green valleys, granite peaks, and nomadic gers — the most popular 4WD rental day trip from Ulaanbaatar.',
+          description: 'Green valleys, granite peaks, and nomadic gers — the most popular 4x4 rental day trip from Ulaanbaatar.',
           image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80',
         },
         {
@@ -68,7 +68,7 @@ export const translations = {
         {
           name: 'Khövsgöl Lake',
           distance: '770km from Ulaanbaatar',
-          description: "Mongolia's crystal-clear \"Blue Pearl\" surrounded by taiga forest. Best reached by 4WD rental on unpaved mountain roads.",
+          description: "Mongolia's crystal-clear \"Blue Pearl\" surrounded by taiga forest. Best reached by 4x4 rental on unpaved mountain roads.",
           image: 'https://images.unsplash.com/bwsHBiQtUTU?w=800&auto=format&fit=crop&q=80',
         },
         {
