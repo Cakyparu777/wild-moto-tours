@@ -159,15 +159,13 @@ export default function Gallery() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cars.map((car) => (
             <div key={car.name} className="group border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-900 transition-all duration-300">
-              <div className="relative">
-                <CarSlider images={car.images} name={car.name} />
-                {car.tag === 'Motorcycle' && (
-                  <div className="absolute top-2 right-2 bg-white px-3 py-1.5 flex flex-col items-center gap-1">
-                    <img src={loneRiderLogo} alt="Lone Rider" className="h-6 w-auto object-contain" />
-                    <p className="text-[7px] font-semibold tracking-widest uppercase text-black">Equipment Included</p>
-                  </div>
-                )}
-              </div>
+              <CarSlider images={car.images} name={car.name} />
+              {car.tag === 'Motorcycle' && (
+                <div className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 px-4 py-2 flex items-center justify-end gap-2">
+                  <img src={loneRiderLogo} alt="Lone Rider" className="h-5 w-auto object-contain" />
+                  <p className="text-[9px] font-semibold tracking-widest uppercase text-gray-600 dark:text-gray-400">Equipment Included</p>
+                </div>
+              )}
 
               <div className="p-5">
                 <div className="flex items-start justify-between mb-2">
