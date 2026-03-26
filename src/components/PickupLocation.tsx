@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { MapPin, Clock, Phone } from 'lucide-react'
+import { MapPin, Clock, Phone, Mail } from 'lucide-react'
 import { useLang } from '../i18n'
 
 const OWNER = {
@@ -142,6 +142,19 @@ export default function ContactInfo() {
           </a>
 
           <div className="space-y-6">
+            {/* Email */}
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-gray-800 flex items-center justify-center shrink-0">
+                <Mail size={18} className="text-yellow-500" />
+              </div>
+              <div>
+                <p className="text-white font-semibold mb-1">Email</p>
+                <a href="mailto:bookings@wild-moto-mongolia.com" className="text-gray-400 text-sm hover:text-white transition-colors">
+                  bookings@wild-moto-mongolia.com
+                </a>
+              </div>
+            </div>
+
             {/* Phone */}
             <div className="flex gap-4">
               <div className="w-10 h-10 bg-gray-800 flex items-center justify-center shrink-0">
