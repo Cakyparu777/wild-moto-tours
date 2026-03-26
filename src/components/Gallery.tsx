@@ -12,6 +12,7 @@ import img1020 from '../public/car_images/IMG_1020.JPG'
 import bike1 from '../public/bike_images/9DD70740-0670-415E-A86C-B21992186A86.PNG'
 import bike2 from '../public/bike_images/BCCB4145-52CE-44DE-A491-EE7BBDC55B01.PNG'
 import bike3 from '../public/bike_images/IMG_1035.jpg'
+import loneRiderLogo from '../public/logo/Lone_rider_logo.png'
 import { useLang } from '../i18n'
 
 const cars = [
@@ -158,7 +159,14 @@ export default function Gallery() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cars.map((car) => (
             <div key={car.name} className="group border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-900 transition-all duration-300">
-              <CarSlider images={car.images} name={car.name} />
+              <div className="relative">
+                <CarSlider images={car.images} name={car.name} />
+                {car.tag === 'Motorcycle' && (
+                  <div className="absolute top-2 right-2 bg-white px-3 py-1.5 flex items-center gap-1.5">
+                    <img src={loneRiderLogo} alt="Lone Rider" className="h-6 w-auto object-contain" />
+                  </div>
+                )}
+              </div>
 
               <div className="p-5">
                 <div className="flex items-start justify-between mb-2">
