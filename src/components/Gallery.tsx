@@ -162,8 +162,9 @@ export default function Gallery() {
               <div className="relative">
                 <CarSlider images={car.images} name={car.name} />
                 {car.tag === 'Motorcycle' && (
-                  <div className="absolute top-2 right-2 bg-white px-3 py-1.5 flex items-center gap-1.5">
+                  <div className="absolute top-2 right-2 bg-white px-3 py-1.5 flex flex-col items-center gap-1">
                     <img src={loneRiderLogo} alt="Lone Rider" className="h-6 w-auto object-contain" />
+                    <p className="text-[9px] font-semibold tracking-widest uppercase text-gray-500">Equipment Included</p>
                   </div>
                 )}
               </div>
