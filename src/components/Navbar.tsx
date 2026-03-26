@@ -47,7 +47,7 @@ export default function Navbar({ dark, onToggle }: NavbarProps) {
         <img src={logo} alt="Wild Moto Tours" className="h-8 sm:h-10 w-auto object-contain" />
         <div className="flex flex-col">
           <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-900 dark:text-white leading-tight">Wild Moto Tours</span>
-          <span className="text-[9px] tracking-widest uppercase text-gray-400 dark:text-gray-500 leading-tight">Car Rental Service</span>
+          <span className="text-[9px] tracking-widest uppercase text-gray-400 dark:text-gray-500 leading-tight">Vehicle & Motorcycle Rental</span>
         </div>
       </a>
 

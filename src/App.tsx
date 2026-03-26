@@ -3,6 +3,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Gallery from './components/Gallery'
 import Process from './components/Process'
+import Checklist from './components/Checklist'
+import Destinations from './components/Destinations'
 import PickupLocation from './components/PickupLocation'
 import { LangProvider } from './i18n'
 
@@ -31,8 +33,10 @@ export default function App() {
       <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
         <Navbar dark={dark} onToggle={() => setDark(!dark)} />
         <Hero />
+        <Checklist />
         <Process />
         <Gallery />
+        <Destinations />
         <PickupLocation />
         {/* <Footer /> */}
       </div>
