@@ -60,6 +60,17 @@ const cars = [
     descriptionZh: '现代旗舰四驱租赁车，越野性能卓越，蒙古草原长途行驶舒适无忧。',
   },
   {
+    name: 'Suzuki Jimny 2019',
+    price: 70,
+    images: [img1020],
+    seats: 4,
+    transmission: 'Manual',
+    drive: '4WD',
+    tag: 'Off-Road · LHD',
+    description: 'Compact, nimble, and great value. The most fun off-road rental for solo travellers exploring Terelj and nearby trails.',
+    descriptionZh: '小巧灵活、性价比高，独自探索特热勒吉及周边越野路线的最佳租赁选择。',
+  },
+  {
     name: 'VOGE DS 800 Rally "Black Knight" 2026',
     price: 45,
     images: [bike1, bike2],
@@ -80,17 +91,6 @@ const cars = [
     tag: 'Motorcycle',
     description: '300cc lightweight rally bike — perfect for beginners and experienced riders alike. Great for day trips around Ulaanbaatar and Terelj.',
     descriptionZh: '300cc轻量级拉力摩托车，适合初学者与老手。非常适合乌兰巴托及特热勒吉周边的一日骑行。',
-  },
-  {
-    name: 'Suzuki Jimny 2019',
-    price: 70,
-    images: [img1020],
-    seats: 4,
-    transmission: 'Manual',
-    drive: '4WD',
-    tag: 'Off-Road · LHD',
-    description: 'Compact, nimble, and great value. The most fun off-road rental for solo travellers exploring Terelj and nearby trails.',
-    descriptionZh: '小巧灵活、性价比高，独自探索特热勒吉及周边越野路线的最佳租赁选择。',
   },
 ]
 
