@@ -41,7 +41,7 @@ export default function Navbar({ dark, onToggle }: NavbarProps) {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 sm:px-8 py-4 sm:py-5 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+    <nav className="navbar-anim fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 sm:px-8 py-4 sm:py-5 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
       <a href="#" className="flex items-center gap-2">
         <img src={logo} alt="Wild Moto Tours" className="h-10 sm:h-12 w-10 sm:w-12 rounded-full object-cover shrink-0" />
         <div className="flex flex-col">

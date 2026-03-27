@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { MapPin, Clock, Phone, Mail } from 'lucide-react'
 import { useLang } from '../i18n'
+import { useInView } from '../hooks/useInView'
 
 const OWNER = {
   whatsapp: '97699976835',
@@ -91,13 +92,14 @@ export default function ContactInfo() {
   const { lang, t } = useLang()
   const { timeStr, dateStr, isOpen } = useMongoliaTime()
   const c = t.contact
+  const { ref, inView } = useInView<HTMLElement>()
 
   return (
-    <section id="locations" className="py-12 md:py-24 px-6 sm:px-8 md:px-16 lg:px-20 bg-gray-900">
+    <section ref={ref} id="locations" className="py-12 md:py-24 px-6 sm:px-8 md:px-16 lg:px-20 bg-gray-900">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
         {/* Left — contact info */}
-        <div>
+        <div className={`anim-slide-left ${inView ? 'in-view' : ''}`}>
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-gray-500 mb-4">
             {c.label}
           </p>
@@ -211,7 +213,7 @@ export default function ContactInfo() {
         </div>
 
         {/* Right — map */}
-        <div className="w-full h-64 sm:h-80 lg:h-full lg:min-h-[420px] overflow-hidden rounded relative">
+        <div style={{ animationDelay: '200ms' }} className={`w-full h-64 sm:h-80 lg:h-full lg:min-h-[420px] overflow-hidden rounded relative anim-slide-right ${inView ? 'in-view' : ''}`}>
           <iframe
             title="Pickup Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1337.1172856211885!2d106.91739!3d47.91840!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d96926d678a6529%3A0x9adf27fdf8c14a63!2sUlaanbaatar!5e0!3m2!1sen!2smn!4v1700000000000"

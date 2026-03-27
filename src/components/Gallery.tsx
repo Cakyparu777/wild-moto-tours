@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Users, Settings2, Navigation, ChevronLeft, ChevronRight } from 'lucide-react'
 import thumbnail from '../public/background_image/thumbnail.jpeg'
 import img1024 from '../public/car_images/IMG_1024.jpg'
@@ -14,6 +14,7 @@ import bike2 from '../public/bike_images/BCCB4145-52CE-44DE-A491-EE7BBDC55B01.PN
 import bike3 from '../public/bike_images/IMG_1035.jpg'
 import loneRiderLogo from '../public/logo/Lone_rider_logo.png'
 import { useLang } from '../i18n'
+import { useInView } from '../hooks/useInView'
 
 const cars = [
   {
@@ -138,9 +139,38 @@ function CarSlider({ images, name }: { images: string[], name: string }) {
   )
 }
 
+function TiltCard({ children, className, style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = ref.current
+    if (!el) return
+    const r = el.getBoundingClientRect()
+    const x = (e.clientX - r.left) / r.width - 0.5
+    const y = (e.clientY - r.top) / r.height - 0.5
+    el.style.transform = `perspective(800px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) scale3d(1.02,1.02,1.02)`
+    el.style.transition = 'transform 0.1s ease-out'
+    el.style.zIndex = '10'
+    el.style.position = 'relative'
+  }
+  const onMouseLeave = () => {
+    const el = ref.current
+    if (!el) return
+    el.style.transform = ''
+    el.style.transition = 'transform 0.5s ease-out'
+    el.style.zIndex = ''
+  }
+  return (
+    <div ref={ref} className={className} style={style} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
+      {children}
+    </div>
+  )
+}
+
 export default function Gallery() {
   const { lang, t } = useLang()
   const g = t.gallery
+  const { ref: ref4x4, inView: inView4x4 } = useInView()
+  const { ref: refBikes, inView: inViewBikes } = useInView()
 
   return (
     <section id="fleet" className="bg-white dark:bg-gray-950 transition-colors duration-300">
@@ -158,14 +188,18 @@ export default function Gallery() {
       <div className="py-10 md:py-16 px-6 sm:px-8 md:px-16 lg:px-20">
 
         {/* 4x4 Section */}
-        <div className="mb-12">
-          <div className="flex items-center gap-4 mb-6">
+        <div className="mb-12" ref={ref4x4}>
+          <div className={`flex items-center gap-4 mb-6 anim-fade-up ${inView4x4 ? 'in-view' : ''}`}>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white tracking-wide uppercase">4x4 Vehicles</h3>
             <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cars.filter(c => c.tag !== 'Motorcycle').map((car) => (
-            <div key={car.name} className="group border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-900 transition-all duration-300">
+            {cars.filter(c => c.tag !== 'Motorcycle').map((car, i) => (
+            <TiltCard
+              key={car.name}
+              style={{ animationDelay: `${80 + i * 80}ms` }}
+              className={`group border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-900 transition-all duration-300 anim-fade-up ${inView4x4 ? 'in-view' : ''}`}
+            >
               <div className="relative">
                 <CarSlider images={car.images} name={car.name} />
               </div>
@@ -196,20 +230,24 @@ export default function Gallery() {
                   {g.contactOwner}
                 </a>
               </div>
-            </div>
+            </TiltCard>
             ))}
           </div>
         </div>
 
         {/* Motorcycle Section */}
-        <div>
-          <div className="flex items-center gap-4 mb-6">
+        <div ref={refBikes}>
+          <div className={`flex items-center gap-4 mb-6 anim-fade-up ${inViewBikes ? 'in-view' : ''}`}>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white tracking-wide uppercase">Motorcycles</h3>
             <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cars.filter(c => c.tag === 'Motorcycle').map((car) => (
-            <div key={car.name} className="group border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-900 transition-all duration-300">
+            {cars.filter(c => c.tag === 'Motorcycle').map((car, i) => (
+            <TiltCard
+              key={car.name}
+              style={{ animationDelay: `${80 + i * 80}ms` }}
+              className={`group border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-900 transition-all duration-300 anim-fade-up ${inViewBikes ? 'in-view' : ''}`}
+            >
               <div className="relative">
                 <CarSlider images={car.images} name={car.name} />
                 <div className="absolute top-2 right-0 bg-gradient-to-r from-transparent to-white/75 px-1.5 py-1 flex flex-col items-center gap-0.5">
@@ -246,7 +284,7 @@ export default function Gallery() {
                   {g.contactOwner}
                 </a>
               </div>
-            </div>
+            </TiltCard>
             ))}
           </div>
         </div>
