@@ -23,11 +23,10 @@ export default function Navbar({ dark, onToggle }: NavbarProps) {
         <button
           key={code}
           onClick={() => setLang(code)}
-          className={`px-2.5 py-1.5 text-[11px] font-semibold tracking-wider transition-colors ${
-            lang === code
+          className={`px-2.5 py-1.5 text-[11px] font-semibold tracking-wider transition-colors ${lang === code
               ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900'
               : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-          }`}
+            }`}
         >
           {label}
         </button>
@@ -44,10 +43,10 @@ export default function Navbar({ dark, onToggle }: NavbarProps) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 sm:px-8 py-4 sm:py-5 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
       <a href="#" className="flex items-center gap-2">
-        <img src={logo} alt="Wild Moto Tours" className="h-8 sm:h-10 w-auto object-contain" />
+        <img src={logo} alt="Wild Moto Tours" className="h-10 sm:h-12 w-10 sm:w-12 rounded-full object-cover shrink-0" />
         <div className="flex flex-col">
           <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-900 dark:text-white leading-tight">Wild Moto Tours</span>
-          <span className="text-[9px] tracking-widest uppercase text-gray-400 dark:text-gray-500 leading-tight">Vehicle & Motorcycle Rental</span>
+          <span className="text-[9px] tracking-widest uppercase text-gray-400 dark:text-gray-500 leading-tight">4x4 & Motorcycle Rental</span>
         </div>
       </a>
 

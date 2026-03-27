@@ -31,7 +31,7 @@ const cars = [
     name: 'Toyota Land Cruiser 100',
     price: 180,
     images: [img1025],
-    seats: 7,
+    seats: 5,
     transmission: 'Automatic',
     drive: '4x4',
     tag: 'SUV',
@@ -75,22 +75,22 @@ const cars = [
     name: 'VOGE DS 800 Rally "Black Knight" 2026',
     price: 100,
     images: [bike1, bike2],
-    seats: 1,
+    seats: 2,
     transmission: 'Manual',
     drive: '2WD',
     tag: 'Motorcycle',
-    description: '800cc · 5 units available. Built-in camera, LED spotlights, heated grips & seat, crash bars, switchable ABS & traction control. Includes LONE RIDER luggage, tent & camping gear.',
+    description: '800cc · 5 units available. Built-in camera, LED spotlights, heated grips & seat, crash bars, switchable ABS & traction control. Includes tent & camping gear.',
     descriptionZh: '800cc，现有5辆。内置摄像头、LED探照灯、加热手柄及座椅、防摔杠、可切换ABS及牵引力控制。含LONE RIDER行李箱、帐篷及野营装备。',
   },
   {
     name: 'VOGE 300 Rally 2025',
     price: 70,
     images: [bike3],
-    seats: 1,
+    seats: 2,
     transmission: 'Manual',
     drive: '2WD',
     tag: 'Motorcycle',
-    description: '300cc new model. Crash bars, ABS. Includes LONE RIDER luggage storage, tent & camping equipment. Ready for the full Mongolian adventure.',
+    description: '300cc new model. Crash bars, ABS. Includes tent & camping equipment. Ready for the full Mongolian adventure.',
     descriptionZh: '300cc新款。防摔杠、ABS，含LONE RIDER行李储物、帐篷及野营装备，准备好踏上完整的蒙古之旅。',
   },
 ]
@@ -156,17 +156,18 @@ export default function Gallery() {
       </div>
 
       <div className="py-10 md:py-16 px-6 sm:px-8 md:px-16 lg:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cars.map((car) => (
+
+        {/* 4x4 Section */}
+        <div className="mb-12">
+          <div className="flex items-center gap-4 mb-6">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white tracking-wide uppercase">4x4 Vehicles</h3>
+            <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cars.filter(c => c.tag !== 'Motorcycle').map((car) => (
             <div key={car.name} className="group border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-900 transition-all duration-300">
               <div className="relative">
                 <CarSlider images={car.images} name={car.name} />
-                {car.tag === 'Motorcycle' && (
-                  <div className="absolute top-2 right-0 bg-gradient-to-r from-transparent to-white/75 px-1.5 py-1 flex flex-col items-center gap-0.5">
-                    <img src={loneRiderLogo} alt="Lone Rider" className="h-6 w-auto object-contain" />
-                    <p className="text-[7px] font-semibold tracking-widest uppercase text-gray-900">Equipment Included</p>
-                  </div>
-                )}
               </div>
 
               <div className="p-5">
@@ -196,8 +197,60 @@ export default function Gallery() {
                 </a>
               </div>
             </div>
-          ))}
+            ))}
+          </div>
         </div>
+
+        {/* Motorcycle Section */}
+        <div>
+          <div className="flex items-center gap-4 mb-6">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white tracking-wide uppercase">Motorcycles</h3>
+            <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cars.filter(c => c.tag === 'Motorcycle').map((car) => (
+            <div key={car.name} className="group border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 bg-white dark:bg-gray-900 transition-all duration-300">
+              <div className="relative">
+                <CarSlider images={car.images} name={car.name} />
+                <div className="absolute top-2 right-0 bg-gradient-to-r from-transparent to-white/75 px-1.5 py-1 flex flex-col items-center gap-0.5">
+                  <img src={loneRiderLogo} alt="Lone Rider" className="h-6 w-auto object-contain" />
+                  <p className="text-[7px] font-semibold tracking-widest uppercase text-gray-900">Equipment Included</p>
+                </div>
+              </div>
+              <div className="p-5">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="font-bold text-gray-900 dark:text-white text-lg">{car.name}</h3>
+                  <div className="text-right shrink-0 ml-2">
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white">${car.price}</p>
+                    <p className="text-xs text-gray-400">{g.perDay}</p>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-3">
+                  {lang === 'zh' ? car.descriptionZh : car.description}
+                </p>
+                <div className="flex items-center gap-2 mb-3 py-2 border-t border-gray-100 dark:border-gray-800">
+                  <img src={loneRiderLogo} alt="Lone Rider" className="h-4 w-auto object-contain shrink-0 bg-gray-200 p-0.5" />
+                  <p className="text-xs font-semibold text-gray-800 dark:text-gray-200">Full Lone Rider luggage setup included with every bike rental</p>
+                </div>
+                <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 px-3 py-2.5 mb-3">
+                  <p className="text-xs font-bold text-amber-800 dark:text-amber-400 leading-snug">Contact us to plan your motorcycle adventure with full support vehicle backup option</p>
+                </div>
+                <div className="flex items-center gap-4 text-xs text-gray-400 dark:text-gray-500 border-t border-gray-100 dark:border-gray-800 pt-3">
+                  <span className="flex items-center gap-1"><Users size={12} /> {car.seats} {g.seats}</span>
+                  <span className="flex items-center gap-1"><Settings2 size={12} /> {car.transmission}</span>
+                </div>
+                <a
+                  href="#locations"
+                  className="mt-4 block w-full text-center bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs font-semibold tracking-widest uppercase py-3 hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors"
+                >
+                  {g.contactOwner}
+                </a>
+              </div>
+            </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   )

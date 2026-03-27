@@ -4,7 +4,7 @@ import { useLang } from '../i18n'
 
 const OWNER = {
   whatsapp: '97699976835',
-  telegram: 'kineticprecision',
+  telegram: 'lancepic',
   viber: '%2B97699976835',
   wechat: 'kinetic_wechat',
 }

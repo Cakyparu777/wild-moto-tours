@@ -13,7 +13,7 @@ export const translations = {
       tagline: 'Mongolia · 4x4 & Motorcycle Rental',
       headline1: 'EXPLORE THE',
       headline2: 'WILD STEPPE.',
-      description: "Mongolia's premier vehicle and motorcycle rental — rugged, well-maintained 4x4s and bikes ready for the open steppe. Wild Moto Tours puts you in the right ride for any adventure.",
+      description: "Hire top-quality off-road vehicles and explore Mongolia on your terms. Venture beyond the beaten path, where horizons stretch endlessly and nights are spent beneath a sky filled with a million stars.",
       exploreFleet: 'Explore the Fleet',
       contactUs: 'Contact Us',
       trustLabel: 'Trust Score',
@@ -41,7 +41,8 @@ export const translations = {
       items: [
         'No hidden fees — what you see is what you pay',
         'Fully equipped, well-maintained & regularly serviced vehicles',
-        'Full camping equipment included',
+        'Full camping setup included free with every rental',
+        'Collect from city center location in the capital Ulaanbaatar',
         'Easy booking with instant confirmation',
         'Wide range of modern vehicles & motorcycles to suit every need and budget',
         'Multiple pickup and drop-off locations, including airports',
@@ -130,7 +131,8 @@ export const translations = {
       items: [
         '无隐藏费用 — 所见即所付',
         '车辆配备齐全、维护良好、定期保养',
-        '含完整露营装备',
+        '每次租赁均免费含全套野营装备',
+        '可在首都乌兰巴托市中心取车',
         '在线预订便捷，即时确认',
         '车型丰富，含越野车与摩托车，满足不同需求与预算',
         '多个取还车地点，含机场',
