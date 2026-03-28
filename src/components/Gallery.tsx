@@ -69,7 +69,7 @@ const cars = [
     transmission: 'Automatic',
     drive: '4x4',
     tag: 'Off-Road · LHD',
-    description: '1500cc Auto LHD. Snorkel, winch, front & rear LED spotlights, CB radio, roof rack & ladder, awning — tent & camping equipment included.',
+    description: '1500cc Auto LHD. Snorkel, winch, front & rear LED spotlights, auxiliary fuel tanks, roof storage & integrated ladder, awning — tent & camping equipment included.',
     descriptionZh: '1500cc自动左舵。通气管、绞盘、前后LED探照灯、CB无线电、车顶架及梯子、遮阳篷，含帐篷及野营装备。',
   },
   {

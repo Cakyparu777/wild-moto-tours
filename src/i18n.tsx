@@ -13,7 +13,7 @@ export const translations = {
       tagline: 'Mongolia · 4x4 & Motorcycle Rental',
       headline1: 'EXPLORE THE',
       headline2: 'WILD STEPPE.',
-      description: "Hire top-quality off-road vehicles and explore Mongolia on your terms. Venture beyond the beaten path, where horizons stretch endlessly and nights are spent beneath a sky filled with a million stars.",
+      description: "Hire the best off road vehicles on offer, explore Mongolia your way at your pace. Drive where the horizon never ends and sleep under a million stars.",
       exploreFleet: 'Explore the Fleet',
       contactUs: 'Contact Us',
       trustLabel: 'Trust Score',
@@ -187,7 +187,7 @@ export const translations = {
 
 const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({
   lang: 'en',
-  setLang: () => {},
+  setLang: () => { },
 })
 
 export function LangProvider({ children }: { children: ReactNode }) {
@@ -196,7 +196,7 @@ export function LangProvider({ children }: { children: ReactNode }) {
   })
   const handleSet = (l: Lang) => {
     setLang(l)
-    try { localStorage.setItem('lang', l) } catch {}
+    try { localStorage.setItem('lang', l) } catch { }
   }
   return <LangContext.Provider value={{ lang, setLang: handleSet }}>{children}</LangContext.Provider>
 }
