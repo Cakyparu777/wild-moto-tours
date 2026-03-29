@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { MapPin, Clock, Phone, Mail } from 'lucide-react'
 import { useLang } from '../i18n'
 import { useInView } from '../hooks/useInView'
@@ -79,7 +79,8 @@ const contacts = [
     label: 'WeChat',
     color: '#07C160',
     hoverColor: '#06a050',
-    getHref: (_lang: string) => `weixin://`,
+    getHref: (_lang: string) => ``,
+    copyValue: OWNER.wechat,
     icon: (
       <svg viewBox="0 0 32 32" className="w-6 h-6" fill="currentColor">
         <path d="M11.175 4C6.112 4 2 7.54 2 11.893c0 2.438 1.29 4.61 3.317 6.064l-.878 2.71 3.04-1.538a10.37 10.37 0 002.696.353c.292 0 .58-.014.863-.04-.18-.588-.278-1.208-.278-1.848 0-4.072 3.814-7.375 8.517-7.375.313 0 .62.018.924.05C19.185 7.08 15.48 4 11.175 4zM8.5 9.5a1 1 0 110-2 1 1 0 010 2zm5.5 0a1 1 0 110-2 1 1 0 010 2zm4.277 1.25C14.19 10.75 10 13.652 10 17.194c0 3.543 4.19 6.306 8.277 6.306.81 0 1.591-.104 2.328-.298l2.614 1.32-.754-2.33C24.35 21.03 26 19.22 26 17.194c0-3.543-3.946-6.444-7.723-6.444zm-2.777 4.25a.75.75 0 110-1.5.75.75 0 010 1.5zm5.5 0a.75.75 0 110-1.5.75.75 0 010 1.5z" />
@@ -93,6 +94,12 @@ export default function ContactInfo() {
   const { timeStr, dateStr, isOpen } = useMongoliaTime()
   const c = t.contact
   const { ref, inView } = useInView<HTMLElement>()
+  const [copied, setCopied] = useState(false)
+  const handleCopy = useCallback((value: string) => {
+    navigator.clipboard.writeText(value)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }, [])
 
   return (
     <section ref={ref} id="locations" className="py-12 md:py-24 px-6 sm:px-8 md:px-16 lg:px-20 bg-gray-900">
@@ -108,21 +115,35 @@ export default function ContactInfo() {
 
           {/* Big contact buttons */}
           <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 mb-8 md:mb-10">
-            {contacts.map((contact) => (
-              <a
-                key={contact.label}
-                href={contact.getHref(lang)}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ backgroundColor: contact.color } as React.CSSProperties}
-                className="flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-5 py-4 rounded transition-all duration-200 text-white font-semibold text-xs sm:text-sm"
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = contact.hoverColor)}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = contact.color)}
-              >
-                {contact.icon}
-                {contact.label}
-              </a>
-            ))}
+            {contacts.map((contact) =>
+              contact.copyValue ? (
+                <button
+                  key={contact.label}
+                  onClick={() => handleCopy(contact.copyValue!)}
+                  style={{ backgroundColor: contact.color } as React.CSSProperties}
+                  className="flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-5 py-4 rounded transition-all duration-200 text-white font-semibold text-xs sm:text-sm"
+                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = contact.hoverColor)}
+                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = contact.color)}
+                >
+                  {contact.icon}
+                  {copied ? 'Copied!' : contact.label}
+                </button>
+              ) : (
+                <a
+                  key={contact.label}
+                  href={contact.getHref(lang)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ backgroundColor: contact.color } as React.CSSProperties}
+                  className="flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-5 py-4 rounded transition-all duration-200 text-white font-semibold text-xs sm:text-sm"
+                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = contact.hoverColor)}
+                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = contact.color)}
+                >
+                  {contact.icon}
+                  {contact.label}
+                </a>
+              )
+            )}
           </div>
 
           {/* Instagram */}
