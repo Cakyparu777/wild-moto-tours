@@ -7,7 +7,7 @@ const OWNER = {
   whatsapp: '97699976835',
   telegram: 'lancepic',
   viber: '%2B97699976835',
-  wechat: 'kinetic_wechat',
+  wechat: 'wxid_ch3vrn0q7gp622',
 }
 
 const TZ = 'Asia/Ulaanbaatar'
