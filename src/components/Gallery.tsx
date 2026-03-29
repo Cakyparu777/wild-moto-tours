@@ -9,6 +9,8 @@ import img1028 from '../public/car_images/IMG_1028.jpg'
 import img1017 from '../public/car_images/IMG_1017.JPG'
 import img1029 from '../public/car_images/IMG_1029.jpg'
 import img1020 from '../public/car_images/IMG_1020.JPG'
+import lc250new from '../public/car_images/4F6F6AC4-75C1-45D1-A3AF-DCF3457E4522.PNG'
+import lc79new from '../public/car_images/10232F5F-7504-4E6C-80F2-098E53E1FC77.PNG'
 import jimny2 from '../public/car_images/B12EBDBD-1345-49E4-B1E2-8975089DF91D.JPEG'
 import jimny3 from '../public/car_images/D147CC25-3EBA-4664-8C54-34BCB62B4C13.PNG'
 import jimny4 from '../public/car_images/AFB47BA3-FE86-4C86-B607-8EF7DFF6AB85.PNG'
@@ -48,7 +50,7 @@ const cars = [
   {
     name: 'Toyota Land Cruiser 79 2026',
     price: 210,
-    images: [img1018, img1027, img1028],
+    images: [img1018, img1027, img1028, lc79new],
     seats: 5,
     transmission: 'Manual',
     drive: '4x4',
@@ -59,7 +61,7 @@ const cars = [
   {
     name: 'Toyota Land Cruiser LC250',
     price: 375,
-    images: [img1017, img1029],
+    images: [img1017, img1029, lc250new],
     seats: 5,
     transmission: 'Automatic',
     drive: '4x4',
