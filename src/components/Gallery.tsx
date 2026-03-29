@@ -11,6 +11,7 @@ import img1029 from '../public/car_images/IMG_1029.jpg'
 import img1020 from '../public/car_images/IMG_1020.JPG'
 import jimny2 from '../public/car_images/B12EBDBD-1345-49E4-B1E2-8975089DF91D.JPEG'
 import jimny3 from '../public/car_images/D147CC25-3EBA-4664-8C54-34BCB62B4C13.PNG'
+import jimny4 from '../public/car_images/AFB47BA3-FE86-4C86-B607-8EF7DFF6AB85.PNG'
 import bike1 from '../public/bike_images/9DD70740-0670-415E-A86C-B21992186A86.PNG'
 import bike2 from '../public/bike_images/BCCB4145-52CE-44DE-A491-EE7BBDC55B01.PNG'
 import bike3 from '../public/bike_images/IMG_1035.jpg'
@@ -69,7 +70,7 @@ const cars = [
   {
     name: 'Suzuki Jimny 2019',
     price: 139,
-    images: [img1020, jimny2, jimny3],
+    images: [img1020, jimny2, jimny3, jimny4],
     seats: 4,
     transmission: 'Automatic',
     drive: '4x4',
