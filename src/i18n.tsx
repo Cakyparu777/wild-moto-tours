@@ -57,19 +57,19 @@ export const translations = {
         {
           name: 'Terelj National Park',
           distance: '80km from Ulaanbaatar',
-          description: 'Green valleys, granite peaks, and nomadic gers — the most popular 4x4 rental day trip from Ulaanbaatar.',
+          description: 'Green valleys, granite peaks, and nomadic gers — the most popular rental day trip from Ulaanbaatar, whether by car or bike.',
           image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80',
         },
         {
           name: 'Gobi Desert',
           distance: '500km from Ulaanbaatar',
-          description: 'Towering sand dunes, dinosaur fossils, and vast silence. A UAZ or Land Cruiser rental is the only way to get here properly.',
+          description: 'Towering sand dunes, dinosaur fossils, and vast silence. An adventure that demands the right rental — car or bike, this is a journey unlike any other.',
           image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&auto=format&fit=crop&q=80',
         },
         {
           name: 'Khövsgöl Lake',
           distance: '770km from Ulaanbaatar',
-          description: "Mongolia's crystal-clear \"Blue Pearl\" surrounded by taiga forest. Best reached by 4x4 rental on unpaved mountain roads.",
+          description: "Mongolia's crystal-clear \"Blue Pearl\" surrounded by taiga forest. Best experienced by hitting the unpaved mountain roads with your rental of choice.",
           image: 'https://images.unsplash.com/bwsHBiQtUTU?w=800&auto=format&fit=crop&q=80',
         },
         {
@@ -147,19 +147,19 @@ export const translations = {
         {
           name: '特热勒吉国家公园',
           distance: '距乌兰巴托 80 公里',
-          description: '绿色山谷、花岗岩峰与游牧蒙古包 — 从乌兰巴托出发最受欢迎的四驱租赁一日游路线。',
+          description: '绿色山谷、花岗岩峰与游牧蒙古包 — 从乌兰巴托出发最受欢迎的租赁一日游路线，无论驾车还是骑摩托，皆是绝佳选择。',
           image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80',
         },
         {
           name: '戈壁沙漠',
           distance: '距乌兰巴托 500 公里',
-          description: '巍峨沙丘、恐龙化石与无边寂静。租用 UAZ 或陆地巡洋舰是抵达这里最正确的方式。',
+          description: '巍峨沙丘、恐龙化石与无边寂静。无论驾车还是骑行，这都是一段令人难忘的旷野冒险。',
           image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&auto=format&fit=crop&q=80',
         },
         {
           name: '库苏古尔湖',
           distance: '距乌兰巴托 770 公里',
-          description: '蒙古"蓝色明珠"，清澈湖水被泰加林环抱。沿未铺装山路驾驶四驱租赁车前往，别有一番风味。',
+          description: '蒙古"蓝色明珠"，清澈湖水被泰加林环抱。沿未铺装山路骑行或驾车前往，别有一番风味。',
           image: 'https://images.unsplash.com/bwsHBiQtUTU?w=800&auto=format&fit=crop&q=80',
         },
         {
