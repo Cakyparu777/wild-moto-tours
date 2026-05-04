@@ -1,14 +1,14 @@
 import { useState, useRef } from 'react'
 import { Users, Settings2, Navigation, ChevronLeft, ChevronRight } from 'lucide-react'
 import thumbnail from '../public/background_image/thumbnail.jpeg'
-import img1024 from '../public/car_images/IMG_1024.jpg'
-import img1025 from '../public/car_images/IMG_1025.jpg'
 import img1018 from '../public/car_images/IMG_1018.JPG'
 import img1027 from '../public/car_images/IMG_1027.jpg'
 import img1028 from '../public/car_images/IMG_1028.jpg'
 import img1017 from '../public/car_images/IMG_1017.JPG'
 import img1029 from '../public/car_images/IMG_1029.jpg'
 import img1020 from '../public/car_images/IMG_1020.JPG'
+import img1180 from '../public/car_images/IMG_1180.PNG'
+import img1181 from '../public/car_images/IMG_1181.jpg'
 import lc250new from '../public/car_images/4F6F6AC4-75C1-45D1-A3AF-DCF3457E4522.PNG'
 import lc79new from '../public/car_images/10232F5F-7504-4E6C-80F2-098E53E1FC77.PNG'
 import jimny2 from '../public/car_images/B12EBDBD-1345-49E4-B1E2-8975089DF91D.JPEG'
@@ -20,32 +20,22 @@ import bike3 from '../public/bike_images/IMG_1035.jpg'
 import bike4 from '../public/bike_images/IMG_1084.JPG'
 import bike5 from '../public/bike_images/IMG_1085.JPG'
 import bike6 from '../public/bike_images/IMG_1086.JPG'
+import bike1172 from '../public/bike_images/IMG_1172.JPG'
 import loneRiderLogo from '../public/logo/Lone_rider_logo.png'
 import { useLang } from '../i18n'
 import { useInView } from '../hooks/useInView'
 
 const cars = [
   {
-    name: 'UAZ 452 "Bukhanka"',
-    price: 80,
-    images: [img1024],
-    seats: 7,
-    transmission: 'Manual',
-    drive: '4x4',
-    tag: 'Van · LHD',
-    description: '2600cc Soviet-built 4x4 van. Classic, durable, and unstoppable. Includes tent & full camping equipment.',
-    descriptionZh: '2600cc苏联制四驱面包车，经典耐用，所向披靡。含帐篷及全套野营装备。',
-  },
-  {
-    name: 'Toyota Land Cruiser 100',
+    name: 'Toyota FJ Cruiser 4.0 V6',
     price: 180,
-    images: [img1025],
+    images: [img1180, img1181],
     seats: 5,
     transmission: 'Automatic',
     drive: '4x4',
-    tag: 'SUV',
-    description: '4.7L V8 Auto — comfortable, smooth and powerful. Comes complete with tent & full camping equipment for the long road ahead.',
-    descriptionZh: '4.7升V8自动挡，舒适强劲。含帐篷及全套野营装备，为漫漫征途做好准备。',
+    tag: 'SUV · RHD',
+    description: '4.0L V6 Automatic RHD — off-road spec with roof storage and spotlights. Seats 5, full tent & camping equipment included.',
+    descriptionZh: '4.0升V6自动右舵——越野规格，配备车顶储物及探照灯。5座，含帐篷及全套野营装备。',
   },
   {
     name: 'Toyota Land Cruiser 79 2026',
@@ -101,6 +91,17 @@ const cars = [
     tag: 'Motorcycle',
     description: '300cc new model. Crash bars, ABS. Includes tent & camping equipment. Ready for the full Mongolian adventure.',
     descriptionZh: '300cc新款。防摔杠、ABS，含LONE RIDER行李储物、帐篷及野营装备，准备好踏上完整的蒙古之旅。',
+  },
+  {
+    name: 'CF MOTO CFLite 250 2026',
+    price: 70,
+    images: [bike1172],
+    seats: 2,
+    transmission: 'Manual',
+    drive: '2WD',
+    tag: 'Motorcycle',
+    description: 'Low seat height, off-road ready. Comes with Lone Rider luggage setup, tent and camping equipment.',
+    descriptionZh: '低座高，越野就绪。配备LONE RIDER行李设置、帐篷及野营装备。',
   },
 ]
 
