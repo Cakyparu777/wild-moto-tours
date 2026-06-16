@@ -2,8 +2,7 @@ import { useState, useRef } from 'react'
 import { Users, Settings2, Navigation, ChevronLeft, ChevronRight } from 'lucide-react'
 import thumbnail from '../public/background_image/thumbnail.jpeg'
 import img1018 from '../public/car_images/IMG_1018.JPG'
-import img1027 from '../public/car_images/IMG_1027.jpg'
-import img1028 from '../public/car_images/IMG_1028.jpg'
+import img1019 from '../public/car_images/IMG_1019.JPG'
 import img1017 from '../public/car_images/IMG_1017.JPG'
 import img1029 from '../public/car_images/IMG_1029.jpg'
 import img1020 from '../public/car_images/IMG_1020.JPG'
@@ -40,7 +39,7 @@ const cars = [
   {
     name: 'Toyota Land Cruiser 79 2026',
     price: 210,
-    images: [img1018, img1027, img1028],
+    images: [img1018, img1019],
     seats: 5,
     transmission: 'Manual',
     drive: '4x4',
