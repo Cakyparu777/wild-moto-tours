@@ -9,8 +9,7 @@ import img1029 from '../public/car_images/IMG_1029.jpg'
 import img1020 from '../public/car_images/IMG_1020.JPG'
 import img1180 from '../public/car_images/IMG_1180.PNG'
 import img1181 from '../public/car_images/IMG_1181.jpg'
-import img1285 from '../public/car_images/IMG_1285.JPG'
-import img1286 from '../public/car_images/IMG_1286.JPG'
+
 import lc250new from '../public/car_images/4F6F6AC4-75C1-45D1-A3AF-DCF3457E4522.PNG'
 import jimny2 from '../public/car_images/B12EBDBD-1345-49E4-B1E2-8975089DF91D.JPEG'
 import jimny3 from '../public/car_images/D147CC25-3EBA-4664-8C54-34BCB62B4C13.PNG'
@@ -41,7 +40,7 @@ const cars = [
   {
     name: 'Toyota Land Cruiser 79 2026',
     price: 210,
-    images: [img1018, img1027, img1028, img1285, img1286],
+    images: [img1018, img1027, img1028],
     seats: 5,
     transmission: 'Manual',
     drive: '4x4',
